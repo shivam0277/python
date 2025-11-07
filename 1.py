@@ -1,20 +1,74 @@
-# x = "awesome"
-# def myfunc():
-#   x = "fantastic"
-#   print("Python is " + x)
-# myfunc()
-# print("Python is " + x)
+x = "awesome"
+def myfunc():
+  x = "fantastic"
+  print("Python is " + x)
+myfunc()
+print("Python is " + x)
+
+# Global variable
+def myfunc():
+  global x
+  x = "fantastic"
+myfunc()
+print("Python is " + x)
 
 
-# def myfunc():
-#   global x
-#   x = "fantastic"
-# myfunc()
-# print("Python is " + x)
+print("Hello"); print("How are you?"); print("Bye bye!")
 
 
-# print("Hello"); print("How are you?"); print("Bye bye!")
+print("Hello World!", end=" ")
+print("I will print on the same line.")
 
 
-# print("Hello World!", end=" ")
-# print("I will print on the same line.")
+#Arithmetic Operators
+a, b = 10, 3
+print(a + b, a - b, a * b, a / b, a // b, a % b)
+# Output: 13 7 30 3.33333333333
+
+
+x = 2
+print(x ** 5)
+# Output: 32
+
+name = "AI"
+print(name + " Rocks! " * 2)
+# Output: AI Rocks! AI Rocks!
+
+
+s = "Python"
+print(s[1:4])   # Output: yth
+print(s[::-1])  # Output: nohtyP
+
+#list comprehension
+squares = [x**2 for x in range(5)]
+print(squares)
+# Output: [0, 1, 4, 9, 16]
+
+#conditional list comprehension
+evens = [x for x in range(10) if x % 2 == 0]
+print(evens)
+# Output: [0, 2, 4, 6, 8]
+
+
+#dictionary access
+person = {"name": "Alice", "age": 25}
+print(person["name"])       # Output: Alice
+print(person.get("age"))    # Output: 25
+
+
+squares_dict = {x: x**2 for x in range(4)}
+print(squares_dict)
+# Output: {0: 0, 1: 1, 2: 4, 3: 9}
+
+
+a, b, c = (1, 2, 3)
+print(a + b + c)
+# Output: 6
+
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+print(set1 | set2, set1 & set2, set1 - set2)
+# Output: {1, 2, 3, 4, 5} {3} {1, 2}
+
+
