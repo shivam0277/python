@@ -10,6 +10,12 @@ def get_numbers():
         print("❌ Invalid input! Please enter only numbers separated by spaces.")
         return None
 
+# [float(num) for num in data.split()]
+# This list comprehension does all of the above in one line:
+# Iterates over each string number
+# Converts it to a float
+# Collects all floats into a new list
+
 
 def calculate_count(numbers):
     """Returns the count of numbers."""
