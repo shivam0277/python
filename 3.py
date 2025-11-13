@@ -476,3 +476,144 @@ set3 = set1 - set2
 # symmetric_difference_update()	^=	Inserts the symmetric differences from this set and another
 # union()	|	Return a set containing the union of sets
 # update()	|=	Update the set with the union of this set and others
+
+
+# Dictionaries are used to store data values in key:value pairs.
+# A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+#dict() Constructor
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"]
+
+#Get a list of the keys:
+x = thisdict.keys()
+
+#Add a new item to the original dictionary, and see that the keys list gets updated as well:
+car = {
+"brand": "Ford",
+"model": "Mustang",
+"year": 1964
+}
+x = car.keys()
+print(x) #before the change
+car["color"] = "white"
+print(x) #after the change
+#Output: dict_keys(['brand', 'model', 'year', 'color'])
+
+#The items() method will return each item in a dictionary, as tuples in a list.
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict.items()
+#Output: dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+#or
+thisdict.update({"year": 2020})
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+
+#The popitem() method removes the last inserted item (in versions before 3.7, a random item is removed instead):
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.popitem()
+
+
+#The del keyword removes the item with the specified key name:
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+del thisdict["model"]
+
+#delete the dictionary completely
+del thisdict
+
+#The clear() method empties the dictionary:
+thisdict.clear()
+
+#Print all key names in the dictionary, one by one:
+for x in thisdict:
+  print(x)
+
+#Print all values in the dictionary, one by one:
+for x in thisdict:
+  print(thisdict[x])
+
+#You can also use the values() method to return values of a dictionary:
+for x in thisdict.values():
+
+
+#You can use the keys() method to return the keys of a dictionary:
+# for x in thisdict.keys():
+
+
+#Loop through both keys and values, by using the items() method:
+#for x, y in thisdict.items():
+  print(x, y)
+
+#Make a copy of a dictionary with the copy() method:
+mydict = thisdict.copy()
+#or
+mydict = dict(thisdict)
+
+#Nested Dictionaries
+#A dictionary can also contain dictionaries, this is called nested dictionaries.
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+
+# clear()	Removes all the elements from the dictionary
+# copy()	Returns a copy of the dictionary
+# fromkeys()	Returns a dictionary with the specified keys and value
+# get()	Returns the value of the specified key
+# items()	Returns a list containing a tuple for each key value pair
+# keys()	Returns a list containing the dictionary's keys
+# pop()	Removes the element with the specified key
+# popitem()	Removes the last inserted key-value pair
+# setdefault()	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+# update()	Updates the dictionary with the specified key-value pairs
+# values()	Returns a list of all the values in the dictionary
