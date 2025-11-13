@@ -381,3 +381,98 @@ print(mytuple)
 
 # count()	Returns the number of times a specified value occurs in a tuple
 # index()	Searches the tuple for a specified value and returns the position of where it was found
+
+
+#A set is a collection which is unordered, unchangeable*, and unindexed.
+# Unordered means that the items in a set do not have a defined order.
+# Set items can appear in a different order every time you use them, and cannot be referred to by index or key.
+#Duplicates Not Allowed
+#True and 1 is considered the same value:
+thisset = {"apple", "banana", "cherry", True, 1, 2}
+print(thisset)
+
+#Loop through the set, and print the values:
+thisset = {"apple", "banana", "cherry"}
+for x in thisset:
+  print(x)
+
+#Add an item to a set, using the add() method:
+thisset = {"apple", "banana", "cherry"}
+thisset.add("orange")
+
+#Remove an item from a set, using the remove() method:
+thisset = {"apple", "banana", "cherry"}
+thisset.remove("banana")
+#or
+thisset.discard("banana")
+
+#Remove a random item by using the pop() method:
+thisset = {"apple", "banana", "cherry"}
+x = thisset.pop()
+print(x)
+
+#Delete the set completely:
+del thisset
+
+#Join Two Sets 
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = set1.union(set2)
+
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = set1 | set2
+
+#Join set and tuple
+x = {"a", "b", "c"}
+y = (1, 2, 3)
+z = x.union(y)
+
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+set1.update(set2)
+#Output: {'a', 1, 2, 3, 'b', 'c'} random order
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.intersection(set2)
+#Output: {'apple'}
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1 & set2
+#Output: {'apple'}
+
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+set3 = set1.difference(set2)
+#Output: {'banana', 'cherry'}
+#or
+set3 = set1 - set2
+
+# frozenset is an immutable version of a set.
+# Like sets, it contains unique, unordered, unchangeable elements.
+# Unlike sets, elements cannot be added or removed from a frozenset.
+
+
+# Python has a set of built-in methods that you can use on sets.
+# Method	Shortcut	Description
+# add()	 	Adds an element to the set
+# clear()	 	Removes all the elements from the set
+# copy()	 	Returns a copy of the set
+# difference()	-	Returns a set containing the difference between two or more sets
+# difference_update()	-=	Removes the items in this set that are also included in another, specified set
+# discard()	 	Remove the specified item
+# intersection()	&	Returns a set, that is the intersection of two other sets
+# intersection_update()	&=	Removes the items in this set that are not present in other, specified set(s)
+# isdisjoint()	 	Returns whether two sets have a intersection or not
+# issubset()	<=	Returns True if all items of this set is present in another set
+#  	<	Returns True if all items of this set is present in another, larger set
+# issuperset()	>=	Returns True if all items of another set is present in this set
+#  	>	Returns True if all items of another, smaller set is present in this set
+# pop()	 	Removes an element from the set
+# remove()	 	Removes the specified element
+# symmetric_difference()	^	Returns a set with the symmetric differences of two sets
+# symmetric_difference_update()	^=	Inserts the symmetric differences from this set and another
+# union()	|	Return a set containing the union of sets
+# update()	|=	Update the set with the union of this set and others
