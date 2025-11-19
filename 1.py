@@ -13,6 +13,40 @@ myfunc()
 print("Python is " + x)
 
 
+#To change the value of a global variable inside a function, refer to the variable by using the global keyword:
+x = 300
+def myfunc():
+  global x
+  x = 200
+
+myfunc()
+
+print(x)
+# Output: 200
+
+
+# The nonlocal keyword is used to work with variables inside nested functions.
+# The nonlocal keyword makes the variable belong to the outer function.
+def myfunc1():
+  x = "Jane"
+  def myfunc2():
+    nonlocal x
+    x = "hello"
+  myfunc2()
+  return x
+
+print(myfunc1())
+
+
+# Python follows the LEGB rule when looking up variable names, and searches for them in this order:
+# Local - Inside the current function
+# Enclosing - Inside enclosing functions (from inner to outer)
+# Global - At the top level of the module
+# Built-in - In Python's built-in namespace
+
+
+
+
 print("Hello"); print("How are you?"); print("Bye bye!")
 
 
