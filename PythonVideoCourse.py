@@ -53,7 +53,9 @@ print(result)
 # determine_winner("rock", "paper")
 
 
-
-
 # age = 25
 # print(f"my age is {age}")  //called f string
+
+
+print("Shivam is Tight".title())
+name = "Shi\vam" #escape sequence
