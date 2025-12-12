@@ -225,3 +225,87 @@
 -- HAVING SUM(salary) > 100000;
 
 
+-- Sample Tables
+-- Table: students
+-- id	name	class_id
+-- 1	Asha	101
+-- 2	Raj	102
+-- 3	Meera	103
+-- Table: classes
+-- class_id	class_name
+-- 101	Math
+-- 102	Science
+-- 104	English
+
+-- 1. INNER JOIN 
+-- An INNER JOIN in SQL is a fundamental operation used to combine rows from two or more tables based on a common, related column 
+-- between them.
+
+SELECT students.name, classes.class_name
+FROM students
+INNER JOIN classes
+ON students.class_id = classes.class_id;
+
+-- Output:
+-- Asha  | Math
+-- Raj   | Science 
+
+
+-- 2. LEFT JOIN
+-- The SQL LEFT JOIN (also known as a LEFT OUTER JOIN) is used to retrieve all records from the left table and matching records from 
+-- the right table.
+SELECT students.name, classes.class_name
+FROM students
+LEFT JOIN classes
+ON students.class_id = classes.class_id;
+
+-- Output:
+-- Asha  | Math
+-- Raj   | Science
+-- Meera | NULL   ← (class_id 103 has no match)
+
+-- 3. RIGHT JOIN
+-- The SQL RIGHT JOIN (or RIGHT OUTER JOIN) keyword returns all records from the right table and the matching records from the left table.
+SELECT students.name, classes.class_name
+FROM students
+RIGHT JOIN classes
+ON students.class_id = classes.class_id;
+
+-- Output:
+-- Asha  | Math
+-- Raj   | Science
+-- NULL  | English ← (class_id 104 has no matching student)
+
+--4. FULL OUTER JOIN
+--A FULL OUTER JOIN (or FULL JOIN) in SQL returns all rows from both the left and the right table, regardless of whether a match exists 
+-- between them.
+SELECT students.name, classes.class_name
+FROM students
+FULL OUTER JOIN classes
+ON students.class_id = classes.class_id;
+
+-- Output:
+-- Asha  | Math
+-- Raj   | Science
+-- Meera | NULL     ← student unmatched
+-- NULL  | English  ← class unmatched
+
+--5. CROSS JOIN
+--A CROSS JOIN in SQL combines every row from one table with every row from another table, producing a result known as the Cartesian
+--product. Unlike other join types (like INNER JOIN or LEFT JOIN), a CROSS JOIN does not require a join condition using an ON or WHERE 
+--clause.
+SELECT *
+FROM students
+CROSS JOIN classes;
+
+
+-- 6. SELF JOIN
+--A self join in SQL is a regular join where a table is joined with itself. This technique is used to compare or combine rows within 
+--the same table, treating it as two separate entities by using different table aliases.
+SELECT e.name AS employee, m.name AS manager
+FROM employees e
+LEFT JOIN employees m
+ON e.manager_id = m.id;
+
+
+

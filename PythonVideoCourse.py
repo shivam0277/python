@@ -59,3 +59,35 @@ print(result)
 
 print("Shivam is Tight".title())
 name = "Shi\vam" #escape sequence
+
+
+#Classes
+
+class Animal:
+     def walk(self):
+          print("walk")
+class Dog(Animal):
+
+     def __init__(self,name,age):
+          self.name = age
+          self.age = 5
+
+     def bark(self):
+          print("Woof!")
+
+roger = Dog("Roger", 3)
+print(roger.name)
+print(roger.bark())
+print(roger.walk())
+
+
+# modules
+#to use a module we have to import it first
+#we can use inbuilt modules or we can create our own modules
+#example :
+# import dog from animal
+# dog.bark()
+
+# import math
+# print(math.sqrt(16))
+# print(math.ceil(2.3))
